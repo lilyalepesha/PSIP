@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Пользовательская форма</title>
+</head>
+<body>
+    <div class="label1">Онлайн заказ</div>
+    <form id="userForm">
+        
+        <label for="name">Имя:</label>
+        <input type="text" id="name" name="name" pattern="[A-Za-zА-Яа-яЁё\s]+" required>
+
+        <label for="name">Адрес email:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="name">Адрес доставки:</label>
+        <input type="text" id="delivery" name="delivery" required><br>
+
+        <label for="name">Контактный телефон:</label>
+        <input type="text" id="phone" name="phone" required><br>
+
+        <label for="name">ID продукта:</label>
+        <input type="text" id="productId" name="productId" pattern="[A-Za-z0-9]+" required>
+
+        <label for="message">Подробная информация о заказе:</label>
+        <textarea name="message" rows="4" cols="105"></textarea>
+
+
+        <label for="captcha">Число с картинки:</label>
+        <input type="text" id="captcha" name="captcha" required><br>
+
+        <div class="button1">
+            <img src="img/1.jpeg" alt="Captcha Image" style="width: 200px;"><br>
+            <input type="button" value="Отправить" onclick="submitForm()">
+        </div>
+        
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>

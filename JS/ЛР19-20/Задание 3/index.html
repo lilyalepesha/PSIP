@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Пример Local Storage</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <h1>Пример Local Storage</h1>
+
+  <form onsubmit="saveData(event)">
+    <label for="name">Полное имя:</label>
+    <input type="text" id="name" name="name" pattern="[A-Za-zА-Яа-яЁё\s]+" required>
+
+    <label for="email">Электронная почта:</label>
+    <input type="email" id="email" name="email" required><br>
+
+    <label for="birthdate">Дата рождения:</label>
+    <input type="date" id="birthdate" required><br>
+
+    <label for="birthplace">Место рождения:</label>
+    <input type="text" id="birthplace" required><br>
+
+    <label for="hobbies">Увлечения:</label>
+    <input type="text" id="hobbies" required><br>
+
+    <button type="submit">Сохранить данные</button>
+  </form>
+
+  <button onclick="retrieveData()">Получить Данные</button>
+  <button onclick="clearLocalStorage()">Очистить Local Storage</button>
+
+
+<script src="script.js"></script>
+</body>
+</html>

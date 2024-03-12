@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Моя форма</title>
+</head>
+<body>
+
+    <form id="myForm">
+        <label for="name">Имя:</label>
+        <input type="text" id="name" name="name">
+
+        <br>
+
+        <label>Выберите язык программирования:</label>
+        <select id="programmingLanguage" name="programmingLanguage">
+            <option value="javascript">JavaScript</option>
+            <option value="python">Python</option>
+            <option value="java">Java</option>
+        </select>
+
+        <br>
+
+        <label>Ваш уровень владения языком:</label>
+        <div class="radio-group">
+            <input type="radio" id="beginner" name="level" value="beginner">
+            <label for="beginner">Начинающий</label>
+
+            <input type="radio" id="intermediate" name="level" value="intermediate">
+            <label for="intermediate">Средний</label>
+
+            <input type="radio" id="advanced" name="level" value="advanced">
+            <label for="advanced">Продвинутый</label>
+        </div>
+
+        <br>
+
+        <label>Выберите интересующие вас темы:</label>
+        <div class="checkbox-group">
+            <input type="checkbox" id="frontend" name="topics" value="frontend">
+            <label for="frontend">Frontend</label>
+
+            <input type="checkbox" id="backend" name="topics" value="backend">
+            <label for="backend">Backend</label>
+
+            <input type="checkbox" id="devOps" name="topics" value="devOps">
+            <label for="devOps">DevOps</label>
+        </div>
+
+        <br>
+
+        <button type="button" onclick="submitForm()">Отправить</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>

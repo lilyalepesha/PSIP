@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+		}
+
+		.button {
+			padding: 10px 20px;
+			font-size: 16px;
+		}
+
+		.draggable {
+			width: 100px;
+			height: 100px;
+			background-color: lightblue;
+			border: 1px solid gray;
+			margin: 10px 0;
+		}
+
+		.dropzone {
+			width: 200px;
+			height: 200px;
+			border: 2px dashed gray;
+			margin-top: 20px;
+		}
+
+		.target {
+			width: 100px;
+			height: 100px;
+			background-color: lightgreen;
+			margin-top: 20px;
+		}
+	</style>
+</head>
+
+<body>
+	<button id="myButton" class="button">Нажми меня</button>
+
+	<div id="myDraggableElement" class="draggable" draggable="true">Перетащи меня</div>
+	<div id="myDropZone" class="dropzone">Брось элемент сюда</div>
+
+	<div id="myTargetElement" class="target">Укажи на меня</div>
+
+	<script>
+		// События мыши
+		const button = document.getElementById('myButton');
+		button.addEventListener('click', (event) => {
+			alert('Клик по кнопке!');
+		});
+
+		// События клавиатуры
+		document.addEventListener('keydown', (event) => {
+			alert('Нажата клавиша: ' + event.key);
+		});
+
+		// Drag & Drop события
+		const dragElement = document.getElementById('myDraggableElement');
+		dragElement.addEventListener('dragstart', (event) => {
+			event.dataTransfer.setData('text/plain', 'Это перетаскиваемый элемент');
+		});
+
+		const dropZone = document.getElementById('myDropZone');
+		dropZone.addEventListener('dragover', (event) => {
+			event.preventDefault();
+		});
+
+		dropZone.addEventListener('drop', (event) => {
+			event.preventDefault();
+			const data = event.dataTransfer.getData('text/plain');
+			alert('Перетащили: ' + data);
+		});
+
+		// События указателя
+		const targetElement = document.getElementById('myTargetElement');
+		targetElement.addEventListener('pointerdown', (event) => {
+			alert('Указатель нажат');
+		});
+
+		targetElement.addEventListener('pointermove', (event) => {
+			alert('Указатель движется');
+		});
+
+		// События полосы прокрутки
+		window.addEventListener('scroll', () => {
+			alert('Произошла прокрутка страницы');
+		});
+
+		// События сенсорных экранов
+		const touchElement = document.getElementById('myTouchableElement');
+
+		touchElement.addEventListener('touchstart', (event) => {
+			alert('Экран коснулся');
+		});
+	</script>
+</body>
+
+</html>

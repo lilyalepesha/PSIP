@@ -1,0 +1,32 @@
+<html>
+
+<head>
+	<script type="text/javascript">
+		var c = 0;
+		var t;
+		var timer_is_on = 0;
+
+		function timedCount() {
+			document.getElementById('txt').value = c;
+			c = c + 1;
+			t = setTimeout("timedCount()", 1000);
+		}
+
+		function doTimer() {
+			if (!timer_is_on) {
+				timer_is_on = 1;
+				timedCount();
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<form>
+		<input type="button" value="Начать отсчет!" onClick="doTimer()">
+		<input type="text" id="txt">
+	</form>
+	<p>Щелкните на кнопке выше. Поле ввода начнет отсчет до бесконечности, начиная с 0.</p>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+
+	<!----------------------------Задание 1--------------------------->
+
+	<input value="Задание 1" onclick="alert('Клик!')" type="button">
+
+	<!----------------------------Задание 2--------------------------->
+
+	<script>
+		function countRabbits() {
+			for (let i = 1; i <= 3; i++) {
+				alert("Кролик номер " + i);
+			}
+		}
+	</script>
+
+	<input type="button" onclick="countRabbits()" value="Задание 2">
+
+	<!----------------------------Задание 3--------------------------->
+
+	<input id="elem" type="button" value="Задание 3">
+	<script>
+		elem.onclick = function () {
+			alert('Спасибо');
+		};
+	</script>
+
+	<!----------------------------Задание 4--------------------------->
+
+	<button onclick="alert(this.innerHTML)">Задание 4</button>
+
+
+	<!----------------------------Задание 5--------------------------->
+
+	<input id="elem1" type="button" value="Задание 5" />
+	<script>
+		function handler1() {
+			alert('Спасибо!');
+		};
+
+		function handler2() {
+			alert('Спасибо ещё раз!');
+		}
+		elem1.onclick = () => alert("Привет");
+		elem1.addEventListener("click", handler1); // Спасибо!
+		elem1.addEventListener("click", handler2); // Спасибо ещё раз!
+		//----------------------------Задание 6---------------------------
+		elem1.removeEventListener("click", handler1);
+	</script>
+
+
+	<!----------------------------Задание 7--------------------------->
+
+	<style>
+		body * {
+			margin: 10px;
+			border: 1px solid blue;
+		}
+	</style>
+
+	<form onclick="alert('form')">FORM
+		<div onclick="alert('div')">DIV
+			<p onclick="alert('p')">P</p>
+		</div>
+	</form>
+
+</body>
+
+</html>
